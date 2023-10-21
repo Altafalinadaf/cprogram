@@ -11,6 +11,7 @@ void Even_Odd(){
 	}
 	else{
 		printf("Number is not Prime ");
+		printf("\n");
 	}
 }
 
