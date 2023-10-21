@@ -1,0 +1,122 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+void null_pointer(){
+	printf("This is example of null pointer \n");
+	int *ptr1=NULL; // null pointer
+	printf("There is no output because pointer is null\n");
+	printf("to accessing the null value : ",*ptr1); // we will not get any output because we cannot dereference the null pointer
+
+}
+
+void void_pointer(){
+	int a=100;
+	void *ptr=&a;
+	printf("This is the example of void pointer  \n");
+// X	printf("*p holding the variable address value is : %d\n",*ptr); // we cannot accessing the void pointer value without type casting
+	printf("*p holding the variable address value is : %d\n",*(int*)ptr); // type casting void to int
+}
+
+void pointer(){
+	int a=100;
+	int *p=&a;
+	printf("Single pointer  \n");
+	printf("*p holding the variable address value is : %d\n",*p);
+}
+void double_pointers(){
+	int a=10;
+	int *p=&a;
+	int* *q=&p;
+	printf("Double pointer using : \n");
+	printf("*p addressing variable value is : %d\n",*p);
+	printf("*q addressing variavle value is : %d\n",**q);
+	printf("\n\n");
+}
+
+
+void three_pointers(){
+	int a=10;
+	int *p=&a;
+	int* *q=&p;
+	int** *r=&q;
+	printf("Three pointer using : \n");
+	printf("*p addressing variable value is : %d\n",*p);
+	printf("*q addressing variavle value is : %d\n",**q);
+	printf("*r addressing variavle value is : %d\n",***r);
+	printf("\n\n");
+}
+
+void pointer_addition(){
+	int arr[]={2,3,4,5,6,7};
+	int *p=arr; //pointing the base address
+	printf("This is the example of adding pointer or addition of pointer : \n");
+	printf("the p index addrees value is : %d\n",*p);
+	p=p+2; // adding to pointer position // first it pointing base address after it increment to 2 position
+	printf("the p+2 index addrees value is : %d\n",*p);
+
+	p+=2;
+	printf("the p+2+2 index addrees value is : %d\n",*p);
+	printf("\n\n");
+
+}
+
+void pointer_substraction(){
+	int arr[]={2,3,4,5,6,7};
+	int *p=&arr[5]; //pointing the 5th index  address
+	printf("This is the example of substracting pointer or substraction of pointer : \n");
+	printf("the p index addrees value is : %d\n",*p);
+	p=p-2; // adding to pointer position // first it pointing 5th address after it decrement to 2 position
+	printf("the p-2 index addrees value is : %d\n",*p);
+	p+=2; // decrement 2
+	printf("the p-2-2 index addrees value is : %d\n",*p);\
+	printf("\n\n");
+
+}
+
+void dangling_pointer(){
+	int *ptr;
+	printf("This is the example of dangling pointer \n");
+	printf("declaring the pointer without initializing and accessing the value is callled dangling pointer \n");
+	printf("%d\n",*ptr);
+}
+
+
+int main(){
+	printf("1.void_pointer()\n2.null_pointer() \n3.pointer()\n4.double_pointers()\n5.three_pointers()\n6.pointer_addition()\n7.pointer_substraction()\n8.dangling_pointer()\n");
+	int input;
+	printf("Enter the any one : ");
+	scanf("%d",&input);
+	switch(input){
+		case 1:
+   void_pointer();
+			break;
+		case 2:
+   null_pointer();
+			break;
+  case 3:
+			pointer();
+			break;
+		case 4:
+			double_pointers();
+			break;
+		case 5:
+			three_pointers();
+			break;
+		case 6:
+			pointer_addition();
+			break;
+		case 7:
+			pointer_substraction();
+			break;
+
+		case 8:
+			dangling_pointer();
+			break;
+
+		default:
+			printf("Invalid input \n");
+	}
+
+	null_pointer();
+	return 0;
+}
