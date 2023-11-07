@@ -1,6 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
-#define S 1
+#define S 1 
 
 struct input{
 	int row;
